@@ -67,6 +67,7 @@ const Login = props => {
       setFormIsValid(emailValidity && passwordValidity);
     }, 500);
     return () => {
+      console.log('useEffect CleanUp');
       clearTimeout(handler);
     };
   }, [emailValidity, passwordValidity]);
