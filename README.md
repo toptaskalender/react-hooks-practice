@@ -6,6 +6,7 @@ This project is one of the side projects that is included to [React - The Comple
 
 In this project, thus far I've used
 
-- `useState` Hook,
-- `useEffect` Hook,
-- `useReducer` Hook.
+- `useState`
+- `useEffect`
+- `useReducer`
+- `useContext` Hooks in a way that make my knowledge stronger about them.
