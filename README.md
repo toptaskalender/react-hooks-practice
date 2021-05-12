@@ -9,4 +9,5 @@ In this project, thus far I've used
 - `useState`
 - `useEffect`
 - `useReducer`
-- `useContext` Hooks in a way that make my knowledge stronger about them.
+- `useContext`
+- `useRef` Hooks.
