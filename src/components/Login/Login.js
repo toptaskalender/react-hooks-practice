@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect, useReducer, useContext } from 'react';
 
 import Card from '../UI/Card/Card';
-import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+import AuthContext from '../../store/auth-context';
+
+import classes from './Login.module.css';
 
 const reducerEnteredEmail = (state, action) => {
   switch (action.type) {
@@ -63,14 +65,14 @@ const Login = props => {
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      console.log('useEffect setTimeout');
       setFormIsValid(emailValidity && passwordValidity);
     }, 500);
     return () => {
-      console.log('useEffect CleanUp');
       clearTimeout(handler);
     };
   }, [emailValidity, passwordValidity]);
+
+  const authCtx = useContext(AuthContext);
 
   // Handlers
 
@@ -102,7 +104,7 @@ const Login = props => {
 
   const submitHandler = event => {
     event.preventDefault();
-    props.onLogin(enteredEmailState, enteredPasswordState);
+    authCtx.onLogin(enteredEmailState, enteredPasswordState);
   };
 
   return (
